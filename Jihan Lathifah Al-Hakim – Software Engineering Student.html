@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jihan Lathifah Al-Hakim – Software Engineering Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F0FF;--surface:#fff;--ink:#241650;--muted:#5d5482;--line:#d9d0f5;--pink:#FF6B8A;--mint:#6FE3C1;--sun:#FFD36B;--violet:#6C4BFF;--shadow:#241650;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150f2e;--surface:#211847;--ink:#f1ecff;--muted:#b7aedc;--line:#3a2f70;--shadow:#000}}
+:root[data-theme="dark"]{--bg:#150f2e;--surface:#211847;--ink:#f1ecff;--muted:#b7aedc;--line:#3a2f70;--shadow:#000}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;line-height:1.05;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding:20px 18px 60px}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}
+.brand{font:800 20px "Bricolage Grotesque",sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+.theme{border:2px solid var(--ink);background:var(--surface);border-radius:999px;padding:6px 14px;font-weight:700}
+.hero{display:grid;gap:26px;grid-template-columns:1.1fr .9fr;align-items:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(40px,8vw,76px);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{background:var(--sun);color:#241650;padding:0 .15em;border-radius:12px;display:inline-block;transform:rotate(-2deg)}
+.role{font-size:19px;margin:16px 0 22px;color:var(--muted);min-height:30px}
+.role b{color:var(--pink)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:2px solid var(--ink);border-radius:14px;padding:11px 20px;font-weight:700;background:var(--pink);color:#241650;box-shadow:4px 4px 0 var(--shadow);transition:transform .12s,box-shadow .12s}
+.btn.alt{background:var(--surface);color:var(--ink)}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--shadow)}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:#241650;border:2px solid var(--ink);border-radius:999px;padding:4px 14px;font-weight:700;font-size:14px;margin-bottom:16px}.badge i{width:10px;height:10px;border-radius:50%;background:#1faa59;animation:pulse 1.4s infinite}@keyframes pulse{50%{opacity:.3}}.why{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:18px}.why .card{box-shadow:4px 4px 0 var(--pink)}.why h3{font-size:19px;margin-bottom:6px}.why p{margin:0;color:var(--muted);font-size:15px}.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.links a{color:var(--ink);font-weight:700;border-bottom:3px solid var(--pink);text-decoration:none}.editor{background:#1b1240;color:#e9e3ff;border:2px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--shadow);overflow:hidden;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace}
+.editor .bar{display:flex;gap:7px;padding:11px 14px;background:#2b1f5e}
+.editor .bar i{width:12px;height:12px;border-radius:50%;background:var(--pink)}
+.editor .bar i:nth-child(2){background:var(--sun)}.editor .bar i:nth-child(3){background:var(--mint)}
+.editor pre{margin:0;padding:16px 18px;overflow-x:auto;white-space:pre}
+.k{color:#ff9db3}.s{color:#8ff0d2}.n{color:#ffd36b}
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:46px 0 22px;position:sticky;top:env(safe-area-inset-top,0px);padding:10px 0;background:var(--bg);z-index:5}
+.tab{border:2px solid var(--ink);background:var(--surface);border-radius:999px;padding:8px 18px;font-weight:700}
+.tab[aria-selected="true"]{background:var(--violet);color:#fff}
+section.panel{display:none;animation:in .3s}
+section.panel.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+h2{font-size:clamp(28px,5vw,40px);margin-bottom:16px}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:18px;padding:20px;box-shadow:5px 5px 0 var(--shadow)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.facts{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.facts li{display:flex;gap:10px}.facts b{min-width:92px;color:var(--violet)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.chip{border:2px solid var(--ink);background:var(--surface);border-radius:12px;padding:8px 14px;font-weight:700;transition:background .15s}
+.chip[aria-pressed="true"]{background:var(--mint);color:#241650}
+.meter{height:14px;border-radius:99px;background:var(--line);overflow:hidden;margin:12px 0 8px}
+.meter div{height:100%;width:0;background:var(--pink);border-radius:99px;transition:width .5s}
+.proj{cursor:pointer;text-align:left;width:100%}
+.proj .more{display:none;margin-top:12px;color:var(--muted)}
+.proj[aria-expanded="true"] .more{display:block}
+.tag{display:inline-block;background:var(--sun);color:#241650;border-radius:8px;padding:1px 9px;font-size:13px;font-weight:700;margin:10px 6px 0 0}
+.tl{border-left:4px solid var(--violet);padding-left:20px;display:grid;gap:18px}
+.tl h3{font-size:22px}.tl small{color:var(--muted)}
+.contact a,.contact button.copy{display:block}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+footer{margin-top:50px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand">jihan.dev</div>
+  <button class="theme" id="theme" aria-label="Switch light or dark theme">Dark / Light</button>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <div class="badge"><i></i>Open to work: internship &amp; junior roles</div>
+    <h1>Hi, I’m <span>Jihan</span> Lathifah Al-Hakim.</h1>
+    <p class="role">Software Engineering student who loves <b id="typed"></b></p>
+    <div class="cta">
+      <button class="btn" data-go="projects">See my projects</button>
+      <button class="btn alt" data-go="contact">Hire me</button>
+    </div>
+  </div>
+  <div class="editor" aria-label="Profile shown as code">
+    <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="k">const</span> jihan = {
+  school: <span class="s">"SMKN 12 Jakarta"</span>,
+  major: <span class="s">"Software Engineering (RPL)"</span>,
+  from: <span class="s">"North Jakarta"</span>,
+  born: <span class="s">"5 May 2009"</span>,
+  learning: [<span class="s">"Web"</span>, <span class="s">"Backend"</span>, <span class="s">"UI"</span>],
+  coffeeOrTea: <span class="n">true</span>
+};</pre>
+  </div>
+</div>
+
+<nav class="tabs" role="tablist" aria-label="CV sections">
+  <button class="tab" role="tab" data-tab="about">About</button>
+  <button class="tab" role="tab" data-tab="skills">Skills</button>
+  <button class="tab" role="tab" data-tab="projects">Projects</button>
+  <button class="tab" role="tab" data-tab="education">Education</button>
+  <button class="tab" role="tab" data-tab="contact">Contact</button>
+</nav>
+
+<section class="panel" id="about">
+  <h2>Why hire me</h2>
+  <div class="why">
+    <div class="card"><h3>I learn fast</h3><p>I teach myself new tools from documentation and tutorials, then build something with them.</p></div>
+    <div class="card"><h3>I finish projects</h3><p>My work is real, working apps, not just ideas. Every project is on GitHub.</p></div>
+    <div class="card"><h3>I care about users</h3><p>I design first, code second, so what I build is easy and nice to use.</p></div>
+    <div class="card"><h3>I work well in a team</h3><p>I communicate clearly, accept feedback, and use Git to collaborate.</p></div>
+  </div>
+  <h2>About me</h2>
+  <div class="card">
+    <p>I’m a vocational high school student majoring in Software Engineering. I enjoy turning ideas into working websites and apps, from the first sketch in Figma to the last bug fixed in the code.</p>
+    <p>I like clean interfaces, tidy code, and learning something new every week. I’m looking for an internship (PKL) where I can build real products and grow with a team.</p>
+    <ul class="facts">
+      <li><b>Full name</b> Jihan Lathifah Al-Hakim</li>
+      <li><b>Born</b> 5 May 2009, North Jakarta</li>
+      <li><b>School</b> SMKN 12 Jakarta</li>
+      <li><b>Major</b> Software Engineering (RPL)</li>
+      <li><b>Languages</b> Indonesian (native), English</li>
+    </ul>
+  </div>
+</section>
+
+<section class="panel" id="skills">
+  <h2>Skills</h2>
+  <p>Tap a skill to see how I use it.</p>
+  <div class="chips" id="chips"></div>
+  <div class="card" aria-live="polite">
+    <h3 id="sk-name"></h3>
+    <div class="meter"><div id="sk-bar"></div></div>
+    <p id="sk-desc" style="margin:0"></p>
+  </div>
+</section>
+
+<section class="panel" id="projects">
+  <h2>Projects</h2>
+  <p>Tap a card to open the details.</p>
+  <div class="grid">
+    <button class="card proj" aria-expanded="false">
+      <h3>School Library App</h3>
+      <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
+      <div class="more">A web app to borrow and return books. It has student login, a book catalog with search, and an admin dashboard for tracking loans.</div>
+    </button>
+    <button class="card proj" aria-expanded="false">
+      <h3>Personal Portfolio</h3>
+      <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+      <div class="more">A responsive portfolio with interactive sections and a dark mode. You’re looking at its newest version right now.</div>
+    </button>
+    <button class="card proj" aria-expanded="false">
+      <h3>Canteen Order App</h3>
+      <span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Prototype</span>
+      <div class="more">A mobile app design that lets students pre-order food and skip the queue. I made the user flow, wireframes, and a clickable prototype.</div>
+    </button>
+    <button class="card proj" aria-expanded="false">
+      <h3>To-Do List Web App</h3>
+      <span class="tag">JavaScript</span><span class="tag">Git</span>
+      <div class="more">A task manager with add, edit, filter, and delete features. Version-controlled on GitHub with clear commits.</div>
+    </button>
+  </div>
+</section>
+
+<section class="panel" id="education">
+  <h2>Education</h2>
+  <div class="tl">
+    <div class="card">
+      <h3>SMKN 12 Jakarta</h3>
+      <small>Software Engineering (RPL) · Ongoing</small>
+      <p style="margin:10px 0 0">Studying programming fundamentals, web development, databases, mobile apps, and software testing through hands-on lab projects.</p>
+    </div>
+    <div class="card">
+      <h3>Self-learning</h3>
+      <small>Online courses and tutorials</small>
+      <p style="margin:10px 0 0">Building small projects after school and practicing English by reading official documentation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="contact">
+  <h2>Let’s connect</h2>
+  <div class="card contact">
+    <p>I’m open to internships, collaborations, and new things to learn. Send me a message!</p>
+    <div class="cta">
+      <a class="btn" href="mailto:jihan@example.com" style="text-decoration:none">Email me</a>
+      <button class="btn alt copy" id="copy">Copy email</button>
+    </div>
+    <div class="links"><a href="https://github.com/jihanlathifah09" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/jihan-lathifah-67135b450/" target="_blank" rel="noopener">LinkedIn</a><a href="https://wa.me/62897705509" target="_blank" rel="noopener">WhatsApp</a></div>
+    <p style="margin-bottom:0;color:var(--muted)">North Jakarta, Indonesia</p>
+  </div>
+</section>
+</main>
+<footer>© 2026 Jihan Lathifah Al-Hakim. Built with HTML, CSS, and JavaScript.</footer>
+</div>
+<div class="toast" id="toast" role="status">Email copied</div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+// Tabs
+const names=$$('.tab').map(t=>t.dataset.tab);
+function show(n,scroll){
+  if(!names.includes(n))n='about';
+  $$('.panel').forEach(p=>p.classList.toggle('on',p.id===n));
+  $$('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===n));
+  if(location.hash!=='#'+n)history.replaceState(null,'','#'+n);
+  if(scroll)$('nav.tabs').scrollIntoView({behavior:'smooth'});
+}
+$$('.tab').forEach(t=>t.onclick=()=>show(t.dataset.tab));
+$$('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go,true));
+addEventListener('hashchange',()=>show(location.hash.slice(1)));
+show(location.hash.slice(1));
+// Skills
+const skills=[
+ ['HTML & CSS',90,'I build responsive layouts with semantic HTML, Flexbox, and Grid.'],
+ ['JavaScript',75,'I add interactivity: DOM, events, and fetching data from APIs.'],
+ ['PHP & Laravel',70,'I build login systems and CRUD apps with a MySQL database.'],
+ ['MySQL',72,'I design tables, relationships, and write queries for real data.'],
+ ['Git & GitHub',78,'I use branches, commits, and pull requests to keep code organized.'],
+ ['UI/UX with Figma',80,'I sketch wireframes and make clickable prototypes before coding.'],
+ ['Java & Python',60,'I write programs with OOP basics and solve logic problems.'],
+ ['Testing & Debugging',68,'I test features and track down bugs step by step.']
+];
+const chips=$('#chips');
+skills.forEach((s,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=s[0];b.setAttribute('aria-pressed','false');b.onclick=()=>pick(i);chips.appendChild(b)});
+function pick(i){
+  $$('.chip').forEach((c,j)=>c.setAttribute('aria-pressed',i===j));
+  $('#sk-name').textContent=skills[i][0]+' · '+skills[i][1]+'%';
+  $('#sk-desc').textContent=skills[i][2];
+  $('#sk-bar').style.width=skills[i][1]+'%';
+}
+pick(0);
+// Projects
+$$('.proj').forEach(p=>p.onclick=()=>p.setAttribute('aria-expanded',p.getAttribute('aria-expanded')!=='true'));
+// Typing effect
+const words=['building websites.','clean code.','good design.','solving bugs.'];
+let w=0,c=0,del=false;const el=$('#typed');
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function tick(){
+  const t=words[w];
+  if(reduce){el.textContent=t;setTimeout(()=>{w=(w+1)%words.length;tick()},2200);return}
+  el.textContent=t.slice(0,c);
+  if(!del&&c===t.length){del=true;return setTimeout(tick,1400)}
+  if(del&&c===0){del=false;w=(w+1)%words.length}
+  c+=del?-1:1;setTimeout(tick,del?40:80);
+}
+tick();
+// Theme
+$('#theme').onclick=()=>{
+  const r=document.documentElement,dark=getComputedStyle(r).getPropertyValue('--bg').trim()==='#150f2e';
+  r.dataset.theme=dark?'light':'dark';
+};
+// Copy email
+$('#copy').onclick=async()=>{
+  try{await navigator.clipboard.writeText('jihan@example.com')}catch(e){}
+  const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600);
+};
+</script>
+</body>
+</html>
